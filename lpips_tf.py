@@ -55,7 +55,7 @@ def lpips(input0, input1, model='net-lin', net='alex', version=0.1):
     input0 = input0 * 2.0 - 1.0
     input1 = input1 * 2.0 - 1.0
 
-    input0_name, input1_name = '0:0', '1:0'
+    input0_name, input1_name = 'in0:0', 'in1:0'
 
     default_graph = tf.get_default_graph()
     producer_version = default_graph.graph_def_versions.producer

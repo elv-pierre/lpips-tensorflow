@@ -47,8 +47,8 @@ def main():
     (output_name,) = [tf_rep.tensor_dict[output_name].name for output_name in tf_rep.outputs]
 
     # ensure these are the names of the 2 inputs, since that will be assumed when loading the pb file
-    assert input0_name == '0:0'
-    assert input1_name == '1:0'
+    assert input0_name == 'in0:0'
+    assert input1_name == 'in1:0'
     # ensure that the only output is the output of the last op in the graph, since that will be assumed later
     (last_output_name,) = [output.name for output in tf_rep.graph.get_operations()[-1].outputs]
     assert output_name == last_output_name
