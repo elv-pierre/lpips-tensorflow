@@ -46,6 +46,8 @@ def lpips(input0, input1, model='net-lin', net='alex', version=0.1):
     """
     # flatten the leading dimensions
     batch_shape = tf.shape(input0)[:-3]
+    input0 = tf.to_float(input0)
+    input1 = tf.to_float(input1)
     input0 = tf.reshape(input0, tf.concat([[-1], tf.shape(input0)[-3:]], axis=0))
     input1 = tf.reshape(input1, tf.concat([[-1], tf.shape(input1)[-3:]], axis=0))
     # NHWC to NCHW
